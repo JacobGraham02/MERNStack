@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import studentRoutes from './routes/student.js';
 
 const MONGODB_URL = "mongodb+srv://jacobdgraham02:6sCqbxeqCDZPksh@cluster0.roy5i.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
