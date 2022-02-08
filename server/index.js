@@ -4,13 +4,13 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import studentRoute from './routes/student.js';
 
-app.use('/students', studentRoute);
-
 const MONGODB_URL = "mongodb+srv://jacobdgraham02:6sCqbxeqCDZPksh@cluster0.roy5i.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 const PORT = process.env.PORT || 5000; // Give the application the decision on which port to run the application on
 
 const app = express();
+
+app.use('/students', studentRoute);
 
 app.use(bodyParser.json({limit: "20mb", extended: true})); // Limits the JSON image data to no larger than 20 megabytes
 app.use(bodyParser.urlencoded({limit: "20mb", extended: true}));
@@ -29,5 +29,3 @@ mongoose.connect(MONGODB_URL, {
     console.log(error.message);
 })
 ;
-
-// mongoose.set('useFindAndModify', false);
